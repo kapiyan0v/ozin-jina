@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+}
+
+.hot-tours {
+    background-image: url("/public/img/comfort-bg.jpg");
+    height: 293px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hot-tours-title {
+    margin-top: auto;
+    margin-left: 41px;
+    font-size: 28px;
+    color: white;
+    font-weight: 400;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 0 41px;
+    justify-content: space-between;
+}
+
+.tours {
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-item {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 25px 41px;
+    padding: 18px 20px;
+}
+
+.tour-img img {
+    width: 100%;
+}
+
+.tour-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.tour-title h2 {
+    font-size: 21px;
+    font-weight: 590;
+}
+
+.tour-title p {
+    color: #FF9900;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.tour-subtitle {
+    font-size: 13px;
+    color: #BABABA;
+    margin: 10px 0;
+}
+
+.tour-reviews {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.tour-reviews p {
+    color: #BABABA;
+    margin-left: 10px;
+}
+
+.tour-location {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.tour-location img {
+    margin-right: 10px;
+}
+
+.tour-location p {
+    color: #BABABA;
+}
+
+.tour-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tour-footer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-footer-info h2 {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tour-footer-info p {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.tour-footer-price {
+    color: #FF9900;
+    font-size: 21px;
+    font-weight: 600;
+}

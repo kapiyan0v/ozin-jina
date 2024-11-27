@@ -1,0 +1,35 @@
+.nav {
+    background-color: #252525;
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    width: 300px;
+    height: 71px;
+    align-content: center;
+    align-items: center;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    font-size: 9px;
+    justify-content: space-between;
+    padding: 8px 40px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item img {
+    height: 35px;
+    width: 35px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #bbbbbb;
+    margin-top: 5px;
+}

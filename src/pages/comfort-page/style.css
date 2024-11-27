@@ -1,0 +1,102 @@
+.comfort {
+    background-image: url("/public/img/comfort-bg.jpg");
+    height: 293px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comfort-title {
+    margin-top: auto;
+    margin-left: 41px;
+    font-size: 28px;
+    color: white;
+    font-weight: 400;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 0 41px;
+    justify-content: space-between;
+}
+
+.filter-card {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 25px 41px;
+    padding: 18px 20px;
+}
+
+.filter-item {
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.filter-item:nth-child(4) {
+    border-bottom: none;
+}
+
+.filter-icon {
+    margin-right: 20px;
+}
+
+.filter-subtitle {
+    color: #BABABA;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px 0;
+}
+
+.filter-title {
+    color: #252525;
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px 0;
+}
+
+.filter-button {
+    background: linear-gradient(0deg, #9E8576 -0.18%, #A28A7A 13.55%, #A68E7D 27.28%, #BCA992 73.38%, #CBBBA0 97.89%);
+    height: 54px;
+    width: 100%;
+    border: none;
+    border-radius: 11px;
+    color: white;
+    font-size: 20px;
+}
+
+.best-offers {
+    margin: 25px 41px;
+}
+
+.best-offers-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.offers {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+.offers-item {
+    margin-right: 10px;
+}
+
+.offers-title {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.offers-subtitle {
+    font-size: 14px;
+    margin: 8px 0;
+    color: #BCA992;
+}
