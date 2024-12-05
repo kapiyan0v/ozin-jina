@@ -1,31 +1,43 @@
 import './style.css'
+import {useNavigate} from "react-router";
 
-const HotToursPage = () => {
+function ComfortListPage() {
+    const navigate = useNavigate()
+
   return (
     <div>
-        <div className='hot-tours'>
-            <div className='header'>
-                <p>
-                    OZIN JINA
-                </p>
-                <button>
-                    <img src="/icons/menu.png" alt=""/>
-                </button>
+        <div className='comfort-list'>
+            <div className='comfort-list-back'
+                 onClick={() => navigate(-1)}
+            >
+                <img src="/icons/nav_back.png" alt="back"/>
             </div>
-            <h1 className='hot-tours-title'>
-                Горящие <br />
-                умра туры
-            </h1>
+            <div>
+                <h2>Алматы-Джидда</h2>
+                <p>1 - 16 нояб, 15 ночей, 3 паломника</p>
+            </div>
         </div>
 
-        <div className='tours'>
-            <div className='tour-item'>
+        <div className='search-filter'>
+            <div className='search-filter-item'>
+                <p>Вылет ± 3 дня</p>
+            </div>
+            <div className='search-filter-item'>
+                Популярные
+                <img src="/icons/dropdown.png" alt=""/>
+            </div>
+            <div className='search-filter-item'>
+                <p>Цена</p>
+            </div>
+        </div>
+
+        <div className='results'>
+            <div className='tour-item' onClick={() => navigate('/tour-info')}>
                 <div className='tour-img'>
                     <img src="/img/item.jpg" alt=""/>
                 </div>
                 <div className='tour-title'>
                     <h2>Marriot 5*</h2>
-                    <p>-20%</p>
                 </div>
                 <div className='tour-subtitle'>
                     <p>Мекка, Саудовская Аравия</p>
@@ -60,20 +72,19 @@ const HotToursPage = () => {
                 </div>
                 <div className='tour-title'>
                     <h2>Marriot 5*</h2>
-                    <p>-20%</p>
                 </div>
                 <div className='tour-subtitle'>
                     <p>Мекка, Саудовская Аравия</p>
                 </div>
                 <div className='tour-reviews'>
-                    <div>
+                    <div className='tour-reviews-stars'>
                         <img src="/icons/star.png" alt=""/>
                         <img src="/icons/star.png" alt=""/>
                         <img src="/icons/star.png" alt=""/>
                         <img src="/icons/star.png" alt=""/>
                         <img src="/icons/star.png" alt=""/>
                     </div>
-                    <p>(345 отзывов)</p>
+                    <p className='tour-reviews-count'>(345 отзывов)</p>
                 </div>
                 <div className='tour-location'>
                     <img src="/icons/mekka.png" alt=""/>
@@ -95,20 +106,19 @@ const HotToursPage = () => {
                 </div>
                 <div className='tour-title'>
                     <h2>Marriot 5*</h2>
-                    <p>-20%</p>
                 </div>
                 <div className='tour-subtitle'>
                     <p>Мекка, Саудовская Аравия</p>
                 </div>
                 <div className='tour-reviews'>
-                    <div>
+                    <div className='tour-reviews-stars'>
                         <img src="/icons/star.png" alt=""/>
                         <img src="/icons/star.png" alt=""/>
                         <img src="/icons/star.png" alt=""/>
                         <img src="/icons/star.png" alt=""/>
                         <img src="/icons/star.png" alt=""/>
                     </div>
-                    <p>(345 отзывов)</p>
+                    <p className='tour-reviews-count'>(345 отзывов)</p>
                 </div>
                 <div className='tour-location'>
                     <img src="/icons/mekka.png" alt=""/>
@@ -129,4 +139,4 @@ const HotToursPage = () => {
   )
 }
 
-export default HotToursPage
+export default ComfortListPage

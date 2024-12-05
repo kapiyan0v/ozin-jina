@@ -18,6 +18,12 @@
     flex-direction: row;
     padding: 0 41px;
     justify-content: space-between;
+    margin-top: 40px;
+}
+
+.header button {
+    background: transparent;
+    border: none;
 }
 
 .filter-card {
