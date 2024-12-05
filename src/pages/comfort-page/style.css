@@ -18,6 +18,12 @@
     flex-direction: row;
     padding: 0 41px;
     justify-content: space-between;
+    margin-top: 40px;
+}
+
+.header button {
+    background: transparent;
+    border: none;
 }
 
 .filter-card {
@@ -78,6 +84,7 @@
 .best-offers-title {
     font-size: 18px;
     font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .offers {
@@ -90,6 +97,12 @@
     margin-right: 10px;
 }
 
+.offers-item img {
+    height: 111px;
+    width: 176px;
+    border-radius: 10px;
+}
+
 .offers-title {
     font-size: 18px;
     margin: 8px 0;
@@ -99,4 +112,52 @@
     font-size: 14px;
     margin: 8px 0;
     color: #BCA992;
+}
+
+.modal {
+    background: #00000059;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    border: none;
+    z-index: 12;
+}
+
+.modal-inner {
+    width: 80vw;
+    height: 80vh;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-search {
+    width: 95%;
+    margin: 25px auto;
+    padding: 10px;
+    border-radius: 10px;
+    color: #BABABA;
+}
+
+.cities-filter {
+    margin-top: 20px;
+}
+
+.cities-filter p {
+    font-size: 18px;
+    border-bottom: 1px solid #DCDCDC;
+    padding: 20px 0;
 }
