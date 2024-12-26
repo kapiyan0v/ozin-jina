@@ -1,8 +1,132 @@
-.fav-page {
-    padding: 40px 0;
+/* FavoritesPage.css */
+
+.favorites-page {
+    font-family: sans-serif;
+    padding: 16px;
+    background-color: #DCDCDC;
+    position: relative;
+    height: 100vh;
 }
 
-.fav-page h3 {
-    margin-left: 40px;
+/* Header row */
+.favorites-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.back-button {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.favorites-header h1 {
+    margin: 0;
     font-size: 20px;
+    font-weight: bold;
+}
+
+/* If no favorites */
+.no-favorites {
+    text-align: center;
+    color: #666;
+    margin-top: 40px;
+}
+
+/* The list container */
+.favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Each favorite card */
+.favorite-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Image container with heart icon */
+.image-container {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.favorite-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Heart (favorite) icon in top-right corner */
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px; /* bigger for a nice heart icon */
+    cursor: pointer;
+}
+
+/* Hotel info (below image) */
+.hotel-info {
+    padding: 12px;
+}
+
+.hotel-name {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.hotel-location {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.hotel-rating {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #999;
+}
+
+.distance {
+    margin: 0;
+    font-size: 13px;
+    color: #999;
+}
+
+/* Price row at bottom of card */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 8px 12px;
+    border-top: 1px solid #eee;
+}
+
+.dates {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.price {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
 }

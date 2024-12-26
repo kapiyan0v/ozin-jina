@@ -24,8 +24,8 @@
 }
 
 .nav-item img {
-    height: 35px;
-    width: 35px;
+    height: auto;
+    width: auto;
 }
 
 .nav a {

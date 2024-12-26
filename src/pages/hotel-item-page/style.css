@@ -1,132 +1,196 @@
-.comfort-list {
+/* HotelDetailsPage.css */
+
+.hotel-details-page {
+    font-family: sans-serif;
+    padding: 16px;
+    position: relative;
+}
+
+/* Header with route/dates/travelers */
+.details-header {
     display: flex;
-    flex-direction: row;
-    padding: 35px 41px;
     align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
 }
 
-.comfort-list-back {
-    height: 40px;
-    width: 40px;
-    margin-right: 40px;
+.back-button {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
 }
 
-.comfort-list h2 {
-    font-size: 20px;
+.header-info h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.comfort-list p {
+.header-info p {
+    margin: 0;
+    color: #666;
     font-size: 14px;
 }
 
-.cities {
-    margin: 0 0 20px 17%;
+/* Toggle for Мекка / Медина */
+.city-toggle {
     display: flex;
-    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 16px;
 }
 
-.city-item {
-    background: linear-gradient(0deg, #9E8576 -0.18%, #A28A7A 13.55%, #A68E7D 27.28%, #BCA992 73.38%, #CBBBA0 97.89%);
-    border-radius: 50px;
-    padding: 7px 40px;
-    margin-right: 10px;
+.toggle-btn {
+    flex: 1;
+    padding: 8px;
+    background: #f1f1f1;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.toggle-btn.active {
+    background: #d2b8a3; /* example brand color */
     color: #fff;
 }
 
-.city-item:last-child {
-    background: #fff;
-    color: #252525;
+/* Big image placeholder */
+.hotel-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 16px;
 }
 
-.tour-body {
-    margin: 0 40px;
-}
-
-.title {
+/* Hotel info row */
+.hotel-info-row {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
 }
 
-.title img {
-    margin-left: 15px;
+.hotel-info-left h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
 }
 
-.tour-reviews {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px 0;
+.location {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
 }
 
-.tour-reviews p {
-    color: #BABABA;
-    margin-left: 10px;
-}
-
-.tour-location {
-    display: flex;
-    flex-direction: row;
-    margin: 15px 0;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #DCDCDC;
-}
-
-.tour-location img {
-    margin-right: 10px;
-}
-
-.tour-dates {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #DCDCDC;
-}
-
-.tour-dates-info {
+.rating {
+    margin: 4px 0;
+    color: #999;
     font-size: 14px;
 }
 
-.tour-dates button {
-    background: linear-gradient(0deg, #9E8576 -0.18%, #A28A7A 13.55%, #A68E7D 27.28%, #BCA992 73.38%, #CBBBA0 97.89%);
-    height: 54px;
-    width: 120px;
-    border: none;
-    border-radius: 11px;
-    color: white;
-    font-size: 17px;
-}
-
-.tour-dates button p span {
-    font-size: 17px;
-    font-weight: 600;
-}
-
-.tour-dates button p {
+.distance {
+    margin: 0;
     font-size: 13px;
-    font-weight: 400;
 }
 
-.tour-data {
-    margin-top: 13px;
-}
-
-.tour-data h2 {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.tour-data p {
-    font-size: 14px;
-}
-
-.tour-data-more {
+.hotel-info-right {
     display: flex;
-    flex-direction: row-reverse;
-    font-size: 14px;
-    color: #BEAB94;
-    margin-bottom: 60px;
+    align-items: center;
+    gap: 8px;
 }
 
+.heart-btn {
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Price row */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.price-row p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.reserve-button {
+    background: #d2b8a3;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Blocks for “Что входит…” and “Об отеле” */
+.block-section {
+    margin-bottom: 16px;
+}
+
+.block-section h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.block-section p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.more-btn {
+    background: transparent;
+    border: none;
+    color: #a67b5b;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.hotel-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hotel-features li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #444;
+}
+
+.hotel-features strong {
+    font-size: 14px;
+}
+
+.feature-details {
+    display: inline-block;
+    margin-left: 8px;
+    background: transparent;
+    border: none;
+    color: #a67b5b;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}

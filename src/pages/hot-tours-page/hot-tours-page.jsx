@@ -6,9 +6,7 @@ const HotToursPage = () => {
     <div>
         <div className='hot-tours'>
             <div className='header'>
-                <p>
-                    OZIN JINA
-                </p>
+                <img src="/icons/logo.png" alt="logo"/>
                 <button>
                     <img src="/icons/menu.png" alt=""/>
                 </button>

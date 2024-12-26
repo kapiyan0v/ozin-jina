@@ -1,0 +1,87 @@
+/* SideDrawer.css */
+
+/* Overlay covers entire screen */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.drawer-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Drawer panel, sliding in from the right */
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0; /* <-- changed to right instead of left */
+    width: 270px;
+    height: 100vh;
+    background: #fff;
+    z-index: 1000;
+    transform: translateX(100%); /* hidden offscreen to the right */
+    transition: transform 0.3s ease;
+    padding: 16px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+}
+
+.drawer.open {
+    transform: translateX(0);
+}
+
+/* Close button in top-right corner of the drawer */
+.drawer-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Header (logo or brand name) */
+.drawer-header {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.drawer-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Drawer body for menu items */
+.drawer-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.drawer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.drawer-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.drawer-item span {
+    font-size: 16px;
+    color: #333;
+}

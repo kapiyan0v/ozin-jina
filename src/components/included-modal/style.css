@@ -1,0 +1,90 @@
+/* IncludedItemsModal.css */
+
+/* Semi-transparent overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* Modal container */
+.included-modal {
+    background-color: #fff;
+    width: 320px; /* adjust as needed */
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+}
+
+/* Header with title and close button */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Body with item rows */
+.modal-body {
+    max-height: 60vh; /* scroll if content is too tall */
+    overflow-y: auto;
+}
+
+/* Each item row (icon + text) */
+.item-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-row:last-child {
+    border-bottom: none; /* no bottom border for last item */
+}
+
+/* Icon to the left */
+.item-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-top: 2px; /* slight offset if needed */
+}
+
+/* Text block */
+.item-text {
+    flex: 1;
+}
+
+.item-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.item-desc {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #666;
+}

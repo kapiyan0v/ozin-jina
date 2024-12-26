@@ -1,119 +1,91 @@
-import './style.css'
+// src/components/FavoritesPage.jsx
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./style.css";
+import {useFavorites} from "../../context/FavoritesContext"; // We'll define CSS below
 
-const FavouritesPage = () => {
-  return (
-    <div className='fav-page'>
-      <h3>Избранное</h3>
+function FavoritesPage() {
+    const navigate = useNavigate();
+    const { favorites, toggleFavorite, isFavorited } = useFavorites();
 
-      <div className='fav-tours-list'>
-          <div className='tour-item'>
-              <div className='tour-img'>
-                  <img src="/img/item.jpg" alt=""/>
-              </div>
-              <div className='tour-title'>
-                  <h2>Marriot 5*</h2>
-                  <p>-20%</p>
-              </div>
-              <div className='tour-subtitle'>
-                  <p>Мекка, Саудовская Аравия</p>
-              </div>
-              <div className='tour-reviews'>
-                  <div>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                  </div>
-                  <p>(345 отзывов)</p>
-              </div>
-              <div className='tour-location'>
-                  <img src="/icons/mekka.png" alt=""/>
-                  <p>700 м. от мечети Аль-Харам</p>
-              </div>
-              <div className='tour-footer'>
-                  <div className='tour-footer-info'>
-                      <h2>1 нояб-16 нояб, 15 ночей</h2>
-                      <p>перелет включен</p>
-                  </div>
-                  <div className='tour-footer-price'>
-                      <p>450 000 ₸</p>
-                  </div>
-              </div>
-          </div>
-          <div className='tour-item'>
-              <div className='tour-img'>
-                  <img src="/img/item.jpg" alt=""/>
-              </div>
-              <div className='tour-title'>
-                  <h2>Marriot 5*</h2>
-                  <p>-20%</p>
-              </div>
-              <div className='tour-subtitle'>
-                  <p>Мекка, Саудовская Аравия</p>
-              </div>
-              <div className='tour-reviews'>
-                  <div>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                  </div>
-                  <p>(345 отзывов)</p>
-              </div>
-              <div className='tour-location'>
-                  <img src="/icons/mekka.png" alt=""/>
-                  <p>700 м. от мечети Аль-Харам</p>
-              </div>
-              <div className='tour-footer'>
-                  <div className='tour-footer-info'>
-                      <h2>1 нояб-16 нояб, 15 ночей</h2>
-                      <p>перелет включен</p>
-                  </div>
-                  <div className='tour-footer-price'>
-                      <p>450 000 ₸</p>
-                  </div>
-              </div>
-          </div>
-          <div className='tour-item'>
-              <div className='tour-img'>
-                  <img src="/img/item.jpg" alt=""/>
-              </div>
-              <div className='tour-title'>
-                  <h2>Marriot 5*</h2>
-                  <p>-20%</p>
-              </div>
-              <div className='tour-subtitle'>
-                  <p>Мекка, Саудовская Аравия</p>
-              </div>
-              <div className='tour-reviews'>
-                  <div>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                      <img src="/icons/star.png" alt=""/>
-                  </div>
-                  <p>(345 отзывов)</p>
-              </div>
-              <div className='tour-location'>
-                  <img src="/icons/mekka.png" alt=""/>
-                  <p>700 м. от мечети Аль-Харам</p>
-              </div>
-              <div className='tour-footer'>
-                  <div className='tour-footer-info'>
-                      <h2>1 нояб-16 нояб, 15 ночей</h2>
-                      <p>перелет включен</p>
-                  </div>
-                  <div className='tour-footer-price'>
-                      <p>450 000 ₸</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
-  )
+    const handleBack = () => {
+        navigate(-1);
+    };
+
+    return (
+        <div className="favorites-page">
+
+            {/* Header */}
+            <div className="favorites-header">
+                <button className="back-button" onClick={handleBack}>
+                    &larr;
+                </button>
+                <h1>Избранное</h1>
+            </div>
+
+            {/* If no favorites, show a placeholder */}
+            {favorites.length === 0 ? (
+                <div className="no-favorites">
+                    <p>У вас пока нет избранных отелей.</p>
+                </div>
+            ) : (
+                <div className="favorites-list">
+                    {favorites.map((hotel, idx) => {
+                        const favorited = isFavorited(hotel);
+
+                        return (
+                            <div
+                                className="favorite-card"
+                                key={idx}
+                                onClick={() =>
+                                    navigate("/hotel-details", {
+                                        state: { hotelData: hotel },
+                                    })
+                                }
+                            >
+                                {/* Image / Heart icon */}
+                                <div className="image-container">
+                                    <img
+                                        src={hotel.img}
+                                        alt={hotel.name}
+                                        className="favorite-image"
+                                    />
+                                    <button
+                                        className="heart-icon"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            toggleFavorite(hotel);
+                                        }}
+                                    >
+                                        {favorited ? "❤️" : "🤍"}
+                                    </button>
+                                </div>
+
+                                {/* Hotel info */}
+                                <div className="hotel-info">
+                                    <h3 className="hotel-name">{hotel.name}</h3>
+                                    <p className="hotel-location">Мекка, Саудовская Аравия</p>
+                                    <p className="hotel-rating">
+                                        ⭐️⭐️⭐️⭐️⭐️ ({hotel.revCount} отзывов)
+                                    </p>
+                                    <p className="distance">700 м. от мечети Аль-Харам</p>
+                                </div>
+
+                                {/* Price row */}
+                                <div className="price-row">
+                                    <p className="dates">
+                                        1 нояб–16 нояб, 15 ночей <br />
+                                        перелет включен
+                                    </p>
+                                    <p className="price">450 000 ₸</p>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            )}
+        </div>
+    );
 }
 
-export default FavouritesPage
+export default FavoritesPage;
